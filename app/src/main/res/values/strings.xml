@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TestSt</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="main">
+        <item>"Packing Material"</item>
+        <item>"Marker Pen"</item>
+        <item>"Wool Fabric"</item>
+        <item>"Felt Cloth"</item>
+        <item>"Other Stationary"</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
