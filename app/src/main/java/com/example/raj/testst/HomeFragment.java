@@ -1,8 +1,10 @@
 package com.example.raj.testst;
 
 
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -32,6 +34,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         name=getResources().getStringArray(R.array.main);
+        android.support.v4.app.FragmentTransaction fragmentTransaction;
+        fragmentTransaction=getChildFragmentManager().beginTransaction();
         int ctr=0;
         for (String Name : name){
             MainCard mainCard=new MainCard(image_id[ctr],Name);
@@ -46,6 +50,16 @@ public class HomeFragment extends Fragment {
         adapter=new MainCardAdapter(list,this);
         recyclerView.setAdapter(adapter);
         return rootView;
+
+    }
+
+    public void onClick(){
+        Fragment fragment = new other();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
 
     }
 

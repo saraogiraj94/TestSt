@@ -19,6 +19,7 @@ public class MainCardAdapter extends RecyclerView.Adapter<MainCardAdapter.MainCa
     ArrayList<MainCard> mainCards = new ArrayList<MainCard>();
     HomeFragment homeFragment;
 
+
     public MainCardAdapter(ArrayList<MainCard> mainCards, HomeFragment homeFragment) {
 
         this.mainCards = mainCards;
@@ -51,6 +52,7 @@ public class MainCardAdapter extends RecyclerView.Adapter<MainCardAdapter.MainCa
         TextView name;
         HomeFragment homeFragment;
 
+
         //   Context context;
         public MainCardViewHolder(View itemView, HomeFragment homeFragment) {
             super(itemView);
@@ -70,7 +72,9 @@ public class MainCardAdapter extends RecyclerView.Adapter<MainCardAdapter.MainCa
             if (pos == 0) {
                    Intent in=new Intent(homeFragment.getActivity(),PackingMaterial.class);
                   homeFragment.getActivity().startActivity(in);
-
+            }
+            if (pos==4){
+                homeFragment.onClick();
             }
 
         }
