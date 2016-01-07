@@ -93,6 +93,7 @@ public class other extends Fragment {
         adapter=new StationaryCardAdapter(arrayList,getActivity());
 
         recyclerView.setAdapter(adapter);
+        recyclerView.setItemAnimator(null);
         return view;
 
 

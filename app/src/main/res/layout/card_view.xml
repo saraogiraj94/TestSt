@@ -6,17 +6,49 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <LinearLayout
             android:padding="@dimen/activity_horizontal_margin"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content" >
 
             <com.android.volley.toolbox.NetworkImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageViewHero" />
+            <RelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD"
+                    android:id="@+id/add"
+                    android:onClick="onClick"
+                    android:layout_below="@+id/quantity" />
+                <TextView
+                    android:layout_alignLeft="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/qty"
+                    android:layout_alignBaseline="@+id/quantity"
+                    android:textStyle="bold"
+                    android:text="Qty"/>
+                <EditText
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quantity"
+                    android:layout_toRightOf="@+id/qty"
+                    android:text="1"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            </LinearLayout>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -73,7 +105,7 @@
                 </TableRow>
 
             </TableLayout>
-        </LinearLayout>
+            </LinearLayout>
     </android.support.v7.widget.CardView>
 
 </RelativeLayout>

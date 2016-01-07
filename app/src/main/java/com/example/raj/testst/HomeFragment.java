@@ -34,8 +34,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         name=getResources().getStringArray(R.array.main);
-        android.support.v4.app.FragmentTransaction fragmentTransaction;
-        fragmentTransaction=getChildFragmentManager().beginTransaction();
+
         int ctr=0;
         for (String Name : name){
             MainCard mainCard=new MainCard(image_id[ctr],Name);
@@ -58,7 +57,7 @@ public class HomeFragment extends Fragment {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_container, fragment);
-        fragmentTransaction.addToBackStack(null);
+     //   fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }

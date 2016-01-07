@@ -5,7 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -32,15 +35,27 @@ public class StationaryCardAdapter extends RecyclerView.Adapter<StationaryCardAd
         return viewHolder;
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         Stationary stationary = list.get(position);
         //Loading image from url
+        final String[] quantity = new String[list.size()];
         imageLoader = Singleton.getInstance().getImageLoader();
         imageLoader.get(stationary.getImgUrl(), ImageLoader.getImageListener(holder.imageView,R.mipmap.ic_launcher,R.drawable.abc_btn_check_material));
         holder.textViewName.setText(stationary.getName());
         holder.textViewPrice.setText(stationary.getPrice().toString());
         holder.textViewPublisher.setText(stationary.getDesc());
         holder.imageView.setImageUrl(stationary.getImgUrl(), imageLoader);
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkText(position);
+                quantity[position] = holder.editText.getText().toString();
+                Toast.makeText(context, "Item is added to the cart" + quantity[position], Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void checkText(int position){
+        notifyItemChanged(position);
     }
 
     @Override
@@ -53,6 +68,8 @@ public class StationaryCardAdapter extends RecyclerView.Adapter<StationaryCardAd
             public TextView textViewName;
             public TextView textViewPublisher;
             public TextView textViewPrice;
+         public Button btn;
+         public EditText editText;
             //Initializing Views
             public ViewHolder(View itemView) {
                 super(itemView);
@@ -60,6 +77,8 @@ public class StationaryCardAdapter extends RecyclerView.Adapter<StationaryCardAd
                 textViewName = (TextView) itemView.findViewById(R.id.textViewName);
                 textViewPublisher = (TextView) itemView.findViewById(R.id.textViewPublisher);
                 textViewPrice = (TextView) itemView.findViewById(R.id.textViewPrice);
+                editText = (EditText) itemView.findViewById(R.id.quantity);
+                btn = (Button) itemView.findViewById(R.id.add);
             }
 
         }
