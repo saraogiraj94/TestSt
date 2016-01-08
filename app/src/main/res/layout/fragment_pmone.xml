@@ -9,7 +9,7 @@
             android:id="@+id/img"
             android:fitsSystemWindows="true"
             android:layout_width="match_parent"
-            android:src="@drawable/stationary" />
+            android:src="@drawable/brown_tape" />
 
 
     </RelativeLayout>

@@ -39,7 +39,7 @@ public class PackingMaterial extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PMone(), "Brown Tape");
         adapter.addFragment(new PMtwo(), "Transparent Tape");
-        adapter.addFragment(new PMthree(), "THREE");
+        adapter.addFragment(new PMthree(), "Tacco Tape");
         viewPager.setAdapter(adapter);
     }
     class ViewPagerAdapter extends FragmentPagerAdapter {

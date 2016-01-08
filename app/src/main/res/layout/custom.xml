@@ -12,6 +12,15 @@
        android:id="@+id/cbutton"
        android:background="#ff0000"
        android:textColor="#ffffff" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Office"
+        android:id="@+id/obutton"
+        android:layout_below="@+id/cbutton"
+        android:background="#ff0000"
+        android:layout_marginTop="-12dp"
+        android:textColor="#ffffff" />
 
 
     <Button
@@ -19,11 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text=" Cancel "
-        android:layout_below="@id/cbutton"
+        android:layout_below="@id/obutton"
         android:layout_marginTop="-12dp"
         android:background="#ff0000"
-
-
         android:textColor="#ffffff" />
 
 </RelativeLayout>

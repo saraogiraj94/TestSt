@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.raj.testst.AboutUs">
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:background="#fcfffdfd">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stationary"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#ff0000"
+        android:text="Our Company is a leading supplier and trader of Packing Materials and various other Mill Store Supply." />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#ff0000"
+            android:text="We have been serving to a large no. of Mills And Processhouse in the city as well as outside of it." />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#ff0000"
+            android:text="With over 37 years of dedicated hardwork,experience and numerous satisfied customers if thier is one comapny you are looking  for in Packing Materials and Store supply its Surely 'US'." />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Suresh Saraogi"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="#060660" />
+    </LinearLayout>
+</FrameLayout>
