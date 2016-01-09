@@ -50,7 +50,7 @@ public class StationaryCardAdapter extends RecyclerView.Adapter<StationaryCardAd
             public void onClick(View view) {
                 checkText(position);
                 quantity[position] = holder.editText.getText().toString();
-                Toast.makeText(context, "Item is added to the cart" + quantity[position], Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Quantity added is " + quantity[position]  , Toast.LENGTH_LONG).show();
             }
         });
     }
