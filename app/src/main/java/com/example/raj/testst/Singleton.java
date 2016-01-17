@@ -2,9 +2,11 @@ package com.example.raj.testst;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
+import android.text.TextUtils;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
@@ -19,6 +21,7 @@ public class Singleton {
     private static Singleton singleton=null;
     private RequestQueue requestQueue;
     private ImageLoader imageLoader;
+    public static final String TAG = Singleton.class.getSimpleName();
     private Singleton()
     {
         requestQueue= Volley.newRequestQueue(MyApplication.getAppContext());
@@ -57,6 +60,12 @@ public class Singleton {
     public ImageLoader getImageLoader() {
         return imageLoader;
     }
+
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
 }
 
 
