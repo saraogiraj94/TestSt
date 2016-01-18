@@ -9,7 +9,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#ffaf25">
         <LinearLayout
             android:padding="@dimen/activity_horizontal_margin"
             android:orientation="horizontal"
@@ -30,7 +31,10 @@
                     android:text="ADD"
                     android:id="@+id/add"
                     android:onClick="onClick"
-                    android:layout_below="@+id/quantity" />
+                    android:layout_below="@+id/quantity"
+                    android:background="#f9fd04"
+                    android:textColor="#ff0606"
+                    android:textSize="20sp" />
                 <TextView
                     android:layout_alignLeft="@+id/add"
                     android:layout_width="wrap_content"
@@ -38,7 +42,9 @@
                     android:id="@+id/qty"
                     android:layout_alignBaseline="@+id/quantity"
                     android:textStyle="bold"
-                    android:text="Qty"/>
+                    android:text="Qty"
+                    android:textSize="15sp"
+                    android:textColor="#183afd" />
                 <EditText
                     android:layout_marginLeft="10dp"
                     android:layout_width="20dp"
@@ -87,9 +93,10 @@
                         />
 
                 </TableRow>
-                <TableRow>
+                <RelativeLayout>
                     <TextView
                         android:text="Price"
+                        android:id="@+id/p"
                         android:paddingRight="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -98,11 +105,18 @@
                     <TextView
                         android:id="@+id/textViewPrice"
                         android:textStyle="bold"
+                        android:layout_toRightOf="@+id/p"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         />
-
-                </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/textViewPrice"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="bold"
+                        android:text="Rs"/>
+                </RelativeLayout>
 
             </TableLayout>
             </LinearLayout>

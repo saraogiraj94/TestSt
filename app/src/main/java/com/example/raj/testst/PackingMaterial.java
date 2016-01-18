@@ -3,20 +3,24 @@ package com.example.raj.testst;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.android.volley.RequestQueue;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class PackingMaterial extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+    private RequestQueue requestQueue;
+    ArrayList<Stationary> arrayList;
 
 
     @Override
@@ -26,8 +30,10 @@ public class PackingMaterial extends AppCompatActivity {
        // toolbar=(Toolbar)findViewById(R.id.toolbar);
         //toolbar.setTitle("Packing material");
       //  setSupportActionBar(toolbar);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+   //     viewPager = (ViewPager) findViewById(R.id.viewpager);
+     //   setupViewPager(viewPager);
+
+
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -35,7 +41,7 @@ public class PackingMaterial extends AppCompatActivity {
 
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+ /*   private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PMone(), "Brown Tape");
         adapter.addFragment(new PMtwo(), "Transparent Tape");
@@ -69,5 +75,5 @@ public class PackingMaterial extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
-    }
+    }*/
 }

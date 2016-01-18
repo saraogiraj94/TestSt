@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SessionManager session;
         FragmentTransaction fragmentTransaction;
-
+        Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Suresh Traders");
         setSupportActionBar(toolbar);
 
@@ -90,17 +90,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home_id) {
+            toolbar.setTitle("Suresh Traders");
             fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,new HomeFragment());
             fragmentTransaction.commit();
             item.setCheckable(true);
 
         } else if (id == R.id.contact) {
+            toolbar.setTitle("Contact Us");
             fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,new ContactUs());
             fragmentTransaction.commit();
             item.setCheckable(true);
         } else if (id == R.id.aboutUs) {
+            toolbar.setTitle("About Us");
             fragmentTransaction=getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_container,new AboutUs());
             fragmentTransaction.commit();

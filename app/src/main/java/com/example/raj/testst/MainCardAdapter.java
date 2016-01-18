@@ -1,6 +1,5 @@
 package com.example.raj.testst;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,13 +68,7 @@ public class MainCardAdapter extends RecyclerView.Adapter<MainCardAdapter.MainCa
 
             int pos = getPosition();
                Toast.makeText(homeFragment.getActivity(), "Clicked " + pos, Toast.LENGTH_SHORT).show();
-            if (pos == 0) {
-                   Intent in=new Intent(homeFragment.getActivity(),PackingMaterial.class);
-                  homeFragment.getActivity().startActivity(in);
-            }
-            if (pos==4){
-                homeFragment.onClick();
-            }
+                homeFragment.onClick(pos);
 
         }
     }

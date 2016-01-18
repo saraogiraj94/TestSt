@@ -6,6 +6,7 @@ package com.example.raj.testst;
 public class Config {
     public static final String DATA_URL = "http://myandroiddevelopment.esy.es/stationary.php";
 
+
     //JSON TAGS
     public static final String TAG_IMAGE_URL = "pimage";
     public static final String TAG_NAME = "pname";

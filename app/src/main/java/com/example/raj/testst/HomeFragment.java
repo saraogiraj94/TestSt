@@ -1,6 +1,7 @@
 package com.example.raj.testst;
 
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,8 +23,9 @@ public class HomeFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
     String name[];
-    ArrayList<MainCard> list=new ArrayList<MainCard>();
-    int[] image_id={R.drawable.packing_material,R.drawable.marker_pen,R.drawable.wool_fabric,R.drawable.felt_cloth,R.drawable.stationary};
+    ArrayList<MainCard> list = new ArrayList<MainCard>();
+    int[] image_id = {R.drawable.packing_material, R.drawable.marker_pen, R.drawable.wool_fabric, R.drawable.felt_cloth, R.drawable.stationary};
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -33,34 +35,47 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        name=getResources().getStringArray(R.array.main);
+        name = getResources().getStringArray(R.array.main);
 
-        int ctr=0;
-        for (String Name : name){
-            MainCard mainCard=new MainCard(image_id[ctr],Name);
+        int ctr = 0;
+        for (String Name : name) {
+            MainCard mainCard = new MainCard(image_id[ctr], Name);
             ctr++;
             list.add(mainCard);
         }
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView=(RecyclerView)rootView.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(getActivity());
+        layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        adapter=new MainCardAdapter(list,this);
+        adapter = new MainCardAdapter(list, this);
         recyclerView.setAdapter(adapter);
         return rootView;
 
     }
 
-    public void onClick(){
-        Fragment fragment = new other();
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_container, fragment);
-     //   fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+    public void onClick(int pos) {
+        if (pos == 0) {
+            Intent in = new Intent(getActivity(), Packing.class);
+            startActivity(in);
+
+        }
+
+        else if(pos==2){
+            Intent in = new Intent(getActivity(),Cloth.class);
+            startActivity(in);
+
+        }
+        else if (pos == 4) {
+            Fragment fragment = new other();
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, fragment);
+            //   fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+
+        }
+
 
     }
-
-
 }

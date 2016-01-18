@@ -3,14 +3,11 @@
     android:layout_height="match_parent" tools:context="com.example.raj.volleytest.other">
 
     <!-- TODO: Update blank fragment layout -->
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="Hi this is Fragment"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recycler_view"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#fdf257">
     </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>
