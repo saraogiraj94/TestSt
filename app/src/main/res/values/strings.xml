@@ -27,4 +27,10 @@
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
     <string name="title_activity_packing">Packing</string>
+    <string name="title_activity_empty">EmptyActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_my_account">MyAccount</string>
+    <string name="title_activity_order_history">OrderHistory</string>
+    <string name="title_activity_order_histoy">OrderHistoy</string>
 </resources>

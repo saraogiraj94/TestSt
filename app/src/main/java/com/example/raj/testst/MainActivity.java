@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity
     private SessionManager session;
         FragmentTransaction fragmentTransaction;
         Toolbar toolbar;
+        private SQLiteHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Suresh Traders");
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        db=new SQLiteHandler(getApplicationContext());
+            /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,10 +118,11 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             session.setLogin(false);
-
+                            db.deleteUsers();
                             //Puting the value false for loggedin
 
                             //Starting login activity
+
                             Intent intent = new Intent(MainActivity.this,StartUp.class);
                             startActivity(intent);
                             finish();
@@ -140,6 +142,18 @@ public class MainActivity extends AppCompatActivity
             alertDialog.show();
 
 
+        }
+        else if (id==R.id.cart){
+            Intent in =new Intent(this,MyCart.class);
+            startActivity(in);
+        }
+        else if (id==R.id.oh){
+            Intent in =new Intent(this,OrderHistory.class);
+            startActivity(in);
+        }
+        else if(id==R.id.account){
+            Intent in =new Intent(this,MyAccount.class);
+            startActivity(in);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

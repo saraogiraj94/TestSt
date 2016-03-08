@@ -22,7 +22,10 @@ public class SessionManager {
 
     // Shared preferences file name
     private static final String PREF_NAME = "AndroidHiveLogin";
-
+    private static final String U_NAME="User Name";
+    private static final String U_EMAIL="User Name";
+    String name;
+    String email;
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
 
     public SessionManager(Context context) {
@@ -39,6 +42,20 @@ public class SessionManager {
         editor.commit();
 
         Log.d(TAG, "User login session modified!");
+    }
+    public void setData(String name,String email){
+        this.name=name;
+        this.email=email;
+        editor.putString(U_NAME, name);
+        editor.putString(U_EMAIL, email);
+        editor.commit();
+    }
+
+    public String getuName(){
+        return pref.getString(U_NAME,name);
+    }
+    public String getuEmail(){
+        return  pref.getString(U_EMAIL,email);
     }
 
     public boolean isLoggedIn(){

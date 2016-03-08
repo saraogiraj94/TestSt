@@ -1,39 +1,48 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.example.raj.testst.AboutUs">
+    android:layout_height="match_parent" tools:context="com.example.raj.testst.AboutUs"
+    android:background="#ff6817">
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff681e">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:scrollbars="vertical"
-        android:background="#fcfffdfd">
+        android:background="#ff681e">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stationary"/>
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/my" />
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="#ff0000"
-        android:text="Our Company is a leading supplier and trader of Packing Materials and various other Mill Store Supply." />
+        android:textColor="#090000"
+        android:text="Our Company is a leading supplier and trader of Packing Materials and various other Mill Store Supply."
+        android:background="#ff681e" />
 
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#ff0000"
-            android:text="We have been serving to a large no. of Mills And Processhouse in the city as well as outside of it." />
+            android:textColor="#090000"
+            android:text="We have been serving to a large no. of Mills And Processhouse in the city as well as outside of it."
+            android:background="#ff681e" />
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#ff0000"
-            android:text="With over 37 years of dedicated hardwork,experience and numerous satisfied customers if thier is one comapny you are looking  for in Packing Materials and Store supply its Surely 'US'." />
+            android:textColor="#090000"
+            android:text="With over 37 years of dedicated hardwork,experience and numerous satisfied customers if thier is one comapny you are looking  for in Packing Materials and Store supply its Surely 'US'."
+            android:background="#ff681e" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +51,8 @@
             android:textSize="18sp"
             android:layout_marginTop="5dp"
             android:textStyle="bold"
-            android:textColor="#060660" />
+            android:textColor="#060660"
+            android:background="#ff681e" />
     </LinearLayout>
+    </ScrollView>
 </FrameLayout>

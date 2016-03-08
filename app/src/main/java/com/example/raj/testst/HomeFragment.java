@@ -60,6 +60,11 @@ public class HomeFragment extends Fragment {
             startActivity(in);
 
         }
+        else if(pos==1){
+            Intent in = new Intent(getActivity(),Marker.class);
+            startActivity(in);
+
+        }
 
         else if(pos==2){
             Intent in = new Intent(getActivity(),Cloth.class);

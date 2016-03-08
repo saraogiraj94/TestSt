@@ -103,7 +103,7 @@ public class other extends Fragment {
 
 
         //JsonArrayRequest of volley
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.DATA_URL,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.ST_URL,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

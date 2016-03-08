@@ -8,6 +8,17 @@ public class Stationary {
     private String name;
     private String desc;
     private Long price;
+    private Long qty;
+    public Stationary(){
+
+    }
+    public Stationary(String name,Long qty,Long price,String desc){
+        this.name=name;
+        this.desc=desc;
+        this.qty=qty;
+        this.price=price;
+    }
+
 
     public String getImgUrl() {
         return imgUrl;
@@ -39,5 +50,13 @@ public class Stationary {
 
     public void setPrice(Long price) {
         this.price = price;
+    }
+
+    public Long getQty() {
+        return qty;
+    }
+
+    public void setQty(Long qty) {
+        this.qty = qty;
     }
 }

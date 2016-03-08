@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
     private EditText inputPassword;
     private ProgressDialog pDialog;
     private SessionManager session;
-    //private SQLiteHandler db;
+    private SQLiteHandler db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
         pDialog.setCancelable(false);
 
         // SQLite database handler
-        //  db = new SQLiteHandler(getApplicationContext());
+          db = new SQLiteHandler(getApplicationContext());
 
         // Session manager
         session = new SessionManager(getApplicationContext());
@@ -119,20 +119,22 @@ public class Login extends AppCompatActivity {
                     // Check for error node in json
                     if (!error) {
                         // user successfully logged in
-                        // Create login session
+                          // Create login session
                         session.setLogin(true);
 
+
                         // Now store the user in SQLite
-                     /*   String uid = jObj.getString("uid");
+                        String uid = jObj.getString("uid");
 
                         JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
-                        String email = user.getString("email");
+                        String uname = user.getString("name");
+                        String uemail = user.getString("email");
                         String created_at = user
-                                .getString("created_at");**/
+                                .getString("created_at");
+                        session.setData(uname,uemail);
 
-                        // Inserting row in users table
-//                        db.addUser(name, email, uid, created_at);
+                        //Inserting row in users table
+                        db.addUser(uname, uemail, uid, created_at);
 
                         // Launch main activity
                         Intent intent = new Intent(Login.this,

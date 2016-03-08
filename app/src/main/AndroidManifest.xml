@@ -46,10 +46,34 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Cloth"
+        <activity
+            android:name=".Cloth"
             android:label="Cloth"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".MyCart" >
+        </activity>
+        <activity
+            android:name=".Marker"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".EmptyActivity"
+            android:label="@string/title_activity_empty" >
+        </activity>
+        <activity
+            android:name=".MyAccount"
+            android:label="@string/title_activity_my_account" >
+        </activity>
+        <activity
+            android:name=".OrderHistory"
+            android:label="@string/title_activity_order_history" >
+        </activity>
+        <activity
+            android:name=".OrderHistoy"
+            android:label="@string/title_activity_order_histoy" >
         </activity>
     </application>
 

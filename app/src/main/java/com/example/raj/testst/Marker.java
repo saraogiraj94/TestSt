@@ -1,8 +1,7 @@
 package com.example.raj.testst;
 
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Packing extends AppCompatActivity {
+public class Marker extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
@@ -30,12 +29,10 @@ public class Packing extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_packing);
+        setContentView(R.layout.activity_marker);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Packing Material");
+        toolbar.setTitle("Cloths");
         setSupportActionBar(toolbar);
-  //      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +59,7 @@ public class Packing extends AppCompatActivity {
 
 
         //JsonArrayRequest of volley
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.PACKING_URL,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.MARKER_URL,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -77,7 +74,8 @@ public class Packing extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         //  progressBar.setVisibility(View.GONE);
                         //If an error occurs that means end of the list has reached
-                        Toast.makeText(Packing.this, "No More Items Available", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Marker.this, "No More Items Available", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
@@ -117,5 +115,4 @@ public class Packing extends AppCompatActivity {
         //Notifying the adapter that data has been added or changed
         adapter.notifyDataSetChanged();
     }
-
 }

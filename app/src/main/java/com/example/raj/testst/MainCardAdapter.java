@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -67,7 +66,7 @@ public class MainCardAdapter extends RecyclerView.Adapter<MainCardAdapter.MainCa
         public void onClick(View view) {
 
             int pos = getPosition();
-               Toast.makeText(homeFragment.getActivity(), "Clicked " + pos, Toast.LENGTH_SHORT).show();
+             //  Toast.makeText(homeFragment.getActivity(), "Clicked " + pos, Toast.LENGTH_SHORT).show();
                 homeFragment.onClick(pos);
 
         }

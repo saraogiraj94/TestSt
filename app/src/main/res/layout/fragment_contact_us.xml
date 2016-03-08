@@ -1,12 +1,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.example.raj.testst.ContactUs">
+    android:layout_height="match_parent" tools:context="com.example.raj.testst.ContactUs"
+    android:background="#ff7614">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <TextView
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -15,7 +17,8 @@
             android:textStyle="bold"
             android:textSize="18dp"
             android:id="@+id/t1"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:textColor="#f6060606" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +28,10 @@
             android:textStyle="bold"
             android:layout_below="@+id/t1"
             android:id="@+id/t2"
-            android:textColor="#ff0000"/>
+            android:textColor="#ff0000"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="18sp" />
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -35,7 +41,8 @@
             android:layout_below="@+id/t2"
             android:id="@+id/t3"
             android:textSize="18dp"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:textColor="#090909" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,18 +52,20 @@
             android:id="@+id/t4"
             android:text="B-33 Rushika Appartment,near Sujata Flats ,Shahibaug Ahmedabad 380004."
             android:textStyle="bold"
-            android:textColor="#ff0000"/>
+            android:textColor="#ff0000"
+            android:textAlignment="center"
+            android:textSize="18sp" />
         <Button
             android:layout_width="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="49dp"
             android:background="#ff0000"
             android:textColor="#fff000"
             android:text="Call Us"
-            android:id="@+id/btn" />
+            android:id="@+id/btn"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
